@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+:root {
+	--main-brand-color: #297ae3;
+	--main-brand-hover-color: #297ae3cc;
+	--primary-color: #15171c;
+	--secondary-color: #232933;
+	--light-secondary-color: #2e3744;
+	--text-color: white;
+	--secondary-text-color: #b3b4b6;
+
+	--border-radius: 5px;
+	--font-size: 1.2em;
+	--box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: var(--primary-color);
+	color: var(--text-color);
+	font-family: "Nunito", sans-serif;
+	min-height: 100vh;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+}
+.container {
+	width: 50%;
+}
+@media only screen and (max-width: 1000px) {
+	.container {
+		width: 100%;
+	}
+}
+.add_button {
+	display: flex;
+	box-shadow: var(--box-shadow);
+}
+.add_button .input_title {
+	width: 100%;
+	padding: 0.5em 1em;
+	border: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-size: 1.5em;
+}
+.add_button button {
+	padding: 1em;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: none;
+	background-color: var(--main-brand-color);
+	color: var(--text-color);
+	font-size: 1em;
+	font-weight: bold;
+}
+.add_button .material-symbols-outlined {
+	font-weight: bold;
+}
+.add_button button:hover {
+	background-color: var(--main-brand-hover-color);
+	cursor: pointer;
+}
+.shopping_list{
+	display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+	margin-top: 1em;
+}
+.shopping_item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	box-shadow: var(--box-shadow);
+	height: 80px;
+	background-color: var(--light-secondary-color);
+	border-radius: 5px;
+}
+.shopping_item_title {
+	width: 100%;
+	font-size: 1.3em;
+}
+.shopping_item_amount{
+	width: 7%;
+	height: 100%;
+	margin-right: 2em;
+	font-size: 1.3em;
+	text-align: center;
+	outline: none;
+	background-color: transparent;
+	border: none;
+	color: var(--text-color);
+	font-weight: bold;
+}
+.shopping_item_amount::-webkit-outer-spin-button,
+.shopping_item_amount::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.shopping_item .material-symbols-outlined {
+	color: var(--text-color);
+	font-weight: bold;
+	
+}
+.shopping_item_checkbox {
+	height: 40%;
+	width: 7%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: none;
+	background-color: #fff;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-right: 1em;
+}
+.shopping_item input[type="checkbox"]:checked + .shopping_item_title {
+	text-decoration: line-through;
+}
+.shopping_item button {
+	height: 100%;
+	width: 100%;
+    cursor: pointer;
+    background-color: rgb(248, 47, 47);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+}
+.shopping_item button:hover {
+	background-color: rgb(244, 72, 72);
+}
+.shopping_item_button {
+	height: 100%;
+	width: 5%;
+}
