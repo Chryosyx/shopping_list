@@ -10,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+		<script src="js.js" defer></script>
 		<title>Einkaufsliste</title>
 	</head>
 	<body>
@@ -26,9 +27,10 @@
 				</div>
 			</form>
 			<div class="shopping_list">
-				<?php foreach ($shopping_items as $shopping_item) { 
+				<h2>fehlt noch</h2><?php 				
+				foreach ($shopping_items as $shopping_item) { 
 					if (!$shopping_item->checked) { ?>
-						<div class="shopping_item">
+						<div class="shopping_item" data-id="<?= $shopping_item->id ?>">
 							<input class="shopping_item_checkbox" type="checkbox" <?= $shopping_item->checked ? "checked" : ""?>>
 							<div class="shopping_item_title"><?= $shopping_item->title ?></div>
 							<input type="number" name="amount" class="shopping_item_amount" value="<?= $shopping_item->amount ?>">
@@ -38,9 +40,12 @@
 								<button type="submit"><span class="material-symbols-outlined">delete</span></button>
 							</form>
 						</div><?php	
-					} else { ?>
-						<h2>Im Warenkorb</h2>
-						<div class="shopping_item">
+					}
+				} ?>
+				<h2>im Einkaufswagen</h2><?php	
+				foreach ($shopping_items as $shopping_item) { 
+					if($shopping_item->checked) { ?>
+						<div class="shopping_item" data-id="<?= $shopping_item->id ?>">
 							<input class="shopping_item_checkbox" type="checkbox" <?= $shopping_item->checked ? "checked" : ""?>>
 							<div class="shopping_item_title"><?= $shopping_item->title ?></div>
 							<input type="number" name="amount" class="shopping_item_amount" value="<?= $shopping_item->amount ?>">
@@ -56,3 +61,11 @@
 		</div>
 	</body>
 </html>
+
+<!-- TODO 
+- Kategorien einfügen, die bei bedarf frei verschoben werden können (draggable und sort) 
+- zudem soll ein dropdown für jede Kategorie erstellt werden in der man alle einträge aus und einklappen kann 
+- bei der erstellung soll ein select field vorhanden sein in der man die Kategorie auswählen kann
+- für handy gängig machen
+- online bringen
+-->
